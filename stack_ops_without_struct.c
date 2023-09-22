@@ -110,7 +110,4 @@ int main()
     for (i=0; i<n; i++) {
         pop_val = pop(&top, items);
     }
-
-
-
 }
