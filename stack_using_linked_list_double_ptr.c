@@ -93,6 +93,4 @@ int main()
         pop_val = pop(&top);
         printf("Popped value = %d\n\n", pop_val);
     }
-
-
 }
