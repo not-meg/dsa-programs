@@ -33,6 +33,8 @@ void display(struct stack *ps)
 {
     int i;
 
+    printf("\nStack:\n");
+
     if (empty(ps)) {
         printf("Stack is empty.\n");
         fflush(stdout);
@@ -45,7 +47,7 @@ void display(struct stack *ps)
     }
 
     for (i=ps->top; i>=0; i--) {
-        printf("ps->items[%d] = %d\n", i, ps->items[i]);
+        printf("%d\t", ps->items[i]);
         fflush(stdout);
     }
 
@@ -63,16 +65,11 @@ void push(struct stack *ps, int d)
         return;
     } else {
         if (ps ==  NULL) {
-            printf("ps is NULL\n");
             return;
         }
         ++(ps->top);
-
-        printf("top = %d\n", ps->top);
         
         ps->items[ps->top] = d;
-        
-        display(ps);
 
         return;
     }
@@ -89,8 +86,6 @@ int pop(struct stack *ps)
         d = ps->items[ps->top];
         (ps->top)--;
 
-        display(ps);
-        
         return d;
     }
 }
@@ -108,9 +103,6 @@ int peek(struct stack *ps)
     }
 }
 
-
-
-
 int main()
 {
     struct stack ps;
@@ -127,6 +119,8 @@ int main()
         push(&ps, data);
     }
 
+    display(&ps);
+
     printf("Enter the number of items to be popped: ");
     scanf("%d", &n);
 
@@ -134,7 +128,24 @@ int main()
         pop(&ps);
     }
 
-    peek(&ps);
-    empty(&ps);
-    overflow(&ps);
+    display(&ps);
+
+    data = peek(&ps);
+    if(data != -1) {
+        printf("Peeking: %d\n", data);
+    }
+
+    data = empty(&ps);
+    if(data == 1) {
+        printf("Stack is empty.\n");
+    } else {
+        printf("Stack is not empty.\n");
+    }
+
+    data = overflow(&ps);
+    if(data == 1) {
+        printf("Stack is full.\n");
+    } else {
+        printf("Stack is not full.\n");
+    }
 }
