@@ -116,7 +116,7 @@ int main()
         printf("Data not found.\n");
     }
 
-    /*printf("Enter the position to find the data: ");
+    printf("Enter the position to find the data: ");
     scanf("%d", &pos);
 
     d = search_position(&tail, pos);
@@ -125,5 +125,5 @@ int main()
         printf("Data found: %d", d);
     } else {
         printf("Data not found.\n");
-    }*/
+    }
 }
