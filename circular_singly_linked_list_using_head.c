@@ -233,7 +233,7 @@ int main()
 
     display(head);
 
-    /*printf("Enter the number of nodes to be deleted: ");
+    printf("Enter the number of nodes to be deleted: ");
     scanf("%d", &n);
 
     for(i=0; i<n; i++) {
@@ -246,7 +246,7 @@ int main()
 
     display(head);*/
 
-    /*printf("Enter the position to enter the element: ");
+    printf("Enter the position to enter the element: ");
     scanf("%d", &pos);
 
     printf("Enter the element to be inserted: ");
@@ -254,7 +254,7 @@ int main()
 
     insertion_pos(&head, d, pos);
 
-    display(head);*/
+    display(head);
 
     printf("Enter the position to delete the element: ");
     scanf("%d", &pos);
